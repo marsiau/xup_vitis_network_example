@@ -37,7 +37,7 @@ set script_folder [_tcl::get_script_folder]
 
 set list_projs [get_projects -quiet]
 if { $list_projs eq "" } {
-   create_project project_1 myproj -part xcu280-fsvh2892-2L-e
+   create_project project_1 myproj -part xczu48dr-ffvg1517-2-e
 }
 
 

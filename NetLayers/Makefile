@@ -16,7 +16,7 @@ help:
 	@echo ""
 
 
-DEVICE ?= xilinx_u280_xdma_201920_3
+DEVICE ?= rfsoc4x2
 KRNL_NAME := networklayer
 SUBMODULENAME = 100G-fpga-network-stack-core
 
@@ -34,6 +34,8 @@ else ifeq (u2,$(findstring u2, $(DEVICE)))
 	SUBMODULETARGET = nohbm
 else ifeq (vck5000,$(findstring vck5000, $(DEVICE)))
 	SUBMODULETARGET = versalaicore
+else ifeq (rfsoc4x2,$(findstring rfsoc4x2, $(DEVICE)))
+    SUBMODULETARGET = hbm
 endif
 
 .PHONY: all clean cleanall
