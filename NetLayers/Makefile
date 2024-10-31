@@ -56,7 +56,7 @@ distcleanall: distclean
 	make -C $(SUBMODULENAME) distclean
 
 
-$(TEMP_DIR)/${KRNL_NAME}.xo: kernel.xml package_netlayer.tcl src/*.v src/*.vhd
+$(TEMP_DIR)/${KRNL_NAME}.xo: template.xml package_netlayer.tcl src/*.v src/*.vhd
 	mkdir -p $(TEMP_DIR)
 	make -C $(SUBMODULENAME) $(SUBMODULETARGET)
 	$(VIVADO) -mode batch -source package_netlayer.tcl -notrace -tclargs $@ ${KRNL_NAME} $(XSA)
