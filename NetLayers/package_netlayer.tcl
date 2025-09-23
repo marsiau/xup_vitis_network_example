@@ -57,6 +57,8 @@ if {[string first "fsvh" ${proj_part}] != -1} {
     set path_to_ip ${path_to_ip}/synthesis_results_versalaicore
 } elseif {[string first "xcv80" ${proj_part}] != -1} {
     set path_to_ip ${path_to_ip}/synthesis_results_versalHBM
+} elseif {[string first "xczu48dr" ${proj_part}] != -1} {
+    set path_to_ip ${path_to_ip}/synthesis_results_zu48dr
 } else {
     set path_to_ip ${path_to_ip}/synthesis_results_noHBM
 }

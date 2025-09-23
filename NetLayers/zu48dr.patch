@@ -1,0 +1,31 @@
+diff --git a/Makefile b/Makefile
+index 62b7aa5..ad05427 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,7 +1,7 @@
+ 
+ 
+ .PHONY:all
+-all: nohbm hbm versalaicore versalhbm
++all: nohbm hbm versalaicore versalhbm zu48dr
+ 
+ .PHONY:nohbm
+ nohbm:
+@@ -27,9 +27,15 @@ versalhbm:
+ 	cp Makefile.synthesis synthesis_results_versalHBM/Makefile
+ 	make -C synthesis_results_versalHBM FPGAPART=xcv80-lsva4737-2MHP-e-S CLKPERIOD=2.0 -j4
+ 
++.PHONY:zu48dr
++zu48dr:
++	mkdir -p synthesis_results_zu48dr
++	cp Makefile.synthesis synthesis_results_zu48dr/Makefile
++	make -C synthesis_results_zu48dr FPGAPART=xczu48dr-ffvg1517-2-e CLKPERIOD=3.103 -j4
++
+ 
+ clean:
+ 	rm -rf *.log *.jou
+ 
+ distclean: clean
+-	rm -rf synthesis_results_*
+\ No newline at end of file
++	rm -rf synthesis_results_*

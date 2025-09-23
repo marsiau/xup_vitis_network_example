@@ -48,6 +48,9 @@ else ifeq (vck5000,$(findstring vck5000, $(DEVICE)))
 else ifeq (v80,$(findstring v80, $(DEVICE)))
 	SUBMODULETARGET = versalhbm
 	CLOCK_FREQ = 390998840
+else ifeq (xczu48dr,$(findstring xczu48dr, $(DEVICE)))
+	SUBMODULETARGET = zu48dr
+	CLOCK_FREQ = 322265625
 endif
 
 .PHONY: all clean cleanall

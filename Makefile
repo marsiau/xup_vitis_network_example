@@ -79,6 +79,10 @@ else ifeq (u280,$(findstring u280, $(DEVICE)))
 	HLS_IP_FOLDER  = $(shell readlink -f ./$(NETLAYERDIR)$(NETLAYERHLS)/synthesis_results_HBM)
 else ifeq (u2,$(findstring u2, $(DEVICE)))
 	HLS_IP_FOLDER  = $(shell readlink -f ./$(NETLAYERDIR)$(NETLAYERHLS)/synthesis_results_noHBM)
+else ifeq (xczu48dr,$(findstring xczu48dr, $(DEVICE)))
+	HLS_IP_FOLDER  = $(shell readlink -f ./$(NETLAYERDIR)$(NETLAYERHLS)/synthesis_results_zu48dr)
+else
+	HLS_IP_FOLDER  = $(shell readlink -f ./$(NETLAYERDIR)$(NETLAYERHLS)/synthesis_results_noHBM)
 endif
 
 LIST_REPOS += --user_ip_repo_paths $(HLS_IP_FOLDER)

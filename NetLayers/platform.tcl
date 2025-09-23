@@ -4,7 +4,12 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 set words [split ${device} "_"]
-set board [lindex ${words} 1]
+
+if {[llength ${words}] > 1} {
+    set board [lindex ${words} 1]
+} else {
+    set board ${device}
+}
 
 if {[string first "v80" ${words}] != -1} {
     set board "v80"
@@ -28,6 +33,8 @@ if {[string first "u55n" ${board}] != -1} {
     set proj_part "xcvc1902-vsva2197-2MP-e-S"
 } elseif {[string first "v80" ${board}] != -1} {
     set proj_part "xcv80-lsva4737-2MHP-e-S"
+} elseif {[string first "xczu48dr" ${board}] != -1} {
+    set proj_part "xczu48dr-ffvg1517-2-e"
 } else {
     catch {common::send_gid_msg -ssname BD::TCL -id 2041 -severity "ERROR" "unsupported device: ${device}"}
     return 1
