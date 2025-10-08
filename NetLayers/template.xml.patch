@@ -1,0 +1,12 @@
+diff --git a/NetLayers/template.xml b/NetLayers/template.xml
+index e3a5f40..c3d1023 100644
+--- a/NetLayers/template.xml
++++ b/NetLayers/template.xml
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <root versionMajor="1" versionMinor="6">
+-  <kernel name="networklayer" language="ip_c" vlnv="xilinx.com:kernel:networklayer:1.0" attributes="" preferredWorkGroupSizeMultiple="0" workGroupSize="1" interrupt="false" hwControlProtocol="ap_ctrl_none">
++  <kernel name="networklayer" language="ip_c" vlnv="xilinx.com:RTLKernel:networklayer:1.0" attributes="" preferredWorkGroupSizeMultiple="0" workGroupSize="1" interrupt="false" hwControlProtocol="ap_ctrl_none">
+     <ports>
+       <port name="S_AXIL_nl"     mode="slave"      range="0x2000"  dataWidth="32"  portType="addressable" base="0x0"/>
+       <port name="S_AXIS_sk2nl"  mode="read_only"  range=""        dataWidth="512" portType="stream"/>
